@@ -88,11 +88,29 @@ footer a{display:block;text-decoration:none;padding:3px 0}footer a:hover{color:v
 .cta{text-align:left;background:radial-gradient(700px 300px at 20% 0,rgba(124,92,255,.25),transparent 70%)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media(prefers-reduced-motion:no-preference){@keyframes up{from{opacity:0;transform:translateY(14px)}}.hero h1{animation:up .8s both}}
+.card{position:relative;overflow:hidden}.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(124,92,255,.18),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover::before{opacity:1}
+#sp{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),#3d6bff);z-index:30}
+.bld{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}@media(max-width:900px){.bld{grid-template-columns:1fr}}
+.ctl{display:grid;gap:18px}.ctl h3{font-size:.95rem;margin:0 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips button{border:1px solid var(--bd);background:var(--s);color:var(--tx);border-radius:99px;padding:8px 14px;cursor:pointer;font:600 .85rem Manrope,sans-serif}.chips button[aria-pressed=true]{border-color:var(--ac2);background:rgba(124,92,255,.2)}
+.chips .sw{width:34px;height:34px;padding:0;border:2px solid transparent}.chips .sw[aria-pressed=true]{border-color:var(--tx)}
+.stage{display:flex;gap:16px;align-items:flex-end;justify-content:center;flex-wrap:wrap;padding:28px;border:1px solid var(--bd);border-radius:20px;background:radial-gradient(500px 240px at 50% 0,rgba(124,92,255,.2),transparent 70%),var(--s)}.stage .m:not(.ph){flex:1 1 340px;max-width:520px}
+.stack{perspective:900px}.stack>.m:first-child{transition:transform .2s ease-out}.stack>.ph{transition:transform .2s ease-out}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}@media(max-width:800px){.est{grid-template-columns:1fr}}
+input[type=range]{padding:0;accent-color:var(--ac)}input[type=checkbox]{width:18px;height:18px;accent-color:var(--ac)}.chk{display:flex;gap:10px;align-items:center;font-weight:500}
+.hero{position:relative;overflow:hidden}.hero .w{position:relative;z-index:1}.hero::before{content:"";position:absolute;width:640px;height:640px;left:var(--ox,62%);top:var(--oy,25%);translate:-50% -50%;background:radial-gradient(circle,rgba(124,92,255,.38),rgba(61,107,255,.12) 45%,transparent 70%);filter:blur(30px);pointer-events:none;transition:left .7s ease-out,top .7s ease-out}
+.btn{transition:transform .2s,background .2s,translate .2s}
+.steps::after{content:"";position:absolute;top:19px;left:19px;height:1px;width:calc((100% - 38px)*var(--f,0));background:var(--ac2)}.step.on b{background:var(--ac);color:#fff;border-color:var(--ac)}.step b{transition:background .4s,color .4s}
+@media(max-width:760px){.steps::after{top:0;left:19px;width:1px;height:calc(100%*var(--f,0))}}
+.ba{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--bd);height:380px;--p:50%;user-select:none}.ba .pane{position:absolute;inset:0}.ba .old{clip-path:inset(0 calc(100% - var(--p)) 0 0)}.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}.ba .hdl{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;margin-left:-1px;z-index:2;pointer-events:none}.ba .hdl::after{content:"\2194";position:absolute;top:50%;left:50%;translate:-50% -50%;width:44px;height:44px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.45)}.ba input:focus-visible~.hdl::after{outline:2px solid #fff;outline-offset:3px}
+.ba .tg{position:absolute;top:12px;z-index:2;background:rgba(0,0,0,.72);color:#fff;font-size:.78rem;padding:4px 12px;border-radius:99px}
+#cmd{padding:0;max-width:520px;margin-top:12vh}#cmd input{border:0;border-bottom:1px solid var(--bd);border-radius:0;padding:18px;background:transparent}#cmd ul{list-style:none;margin:0;padding:8px;max-height:320px;overflow:auto}#cmd li{padding:11px 14px;border-radius:10px;cursor:pointer;color:var(--mu)}#cmd li[aria-selected=true]{background:rgba(124,92,255,.24);color:var(--tx)}
+@media(prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}.hero .g2>div:first-child>*{animation:up .8s both}.hero .g2>div:first-child>:nth-child(2){animation-delay:.15s}.hero .g2>div:first-child>:nth-child(3){animation-delay:.3s}.hero .g2>div:first-child>:nth-child(4){animation-delay:.45s}.stack{animation:up 1s .3s both}}
 </style>
 </head>
 <body>
 <a href="#home" class="btn" style="position:absolute;left:-999px" onfocus="this.style.left='10px'" onblur="this.style.left='-999px'">Skip to content</a>
-<header><div class="w nav">
+<div id="sp"></div><header><div class="w nav">
 <a class="logo" href="#home" aria-label="Elqora Digital home"><i></i><span id="bn">Elqora</span></a>
 <button id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="lk">&#9776;</button>
 <nav class="links" id="lk" aria-label="Main"></nav>
@@ -100,6 +118,7 @@ footer a{display:block;text-decoration:none;padding:3px 0}footer a:hover{color:v
 <main id="app" tabindex="-1"></main>
 <footer><div class="w"><div class="grid" id="ft"></div><p class="sm" style="margin-top:34px" id="cp"></p></div></footer>
 <dialog id="dlg" aria-labelledby="dt"></dialog>
+<dialog id="cmd" aria-label="Quick search"><input id="cq" placeholder="Search pages, projects and packages" aria-label="Search" autocomplete="off"><ul id="cl2" role="listbox" aria-label="Results"></ul></dialog>
 
 <script>
 // ===== CONFIG: edit brand, pricing, contact details and services here =====
@@ -146,11 +165,14 @@ const pricingNote=`<p class="note">Prices are indicative starting points. Final 
 
 const views={
 home:()=>`<section class="hero"><div class="w g2"><div><h1>Your Next Website Should Do More.</h1><p style="font-size:1.12rem">We design and build high-performing websites that make your business look exceptional, earn customer trust, and turn visitors into customers.</p><div class="row">${cta()}<a class="btn g" href="#work">Explore Our Work</a></div><p class="sm">Thoughtful design. Reliable development. Built for growth.</p></div><div class="stack">${mock(C.projects[0])}${mock(C.projects[1],1)}</div></div></section>
+<section class="sec"><div class="w"><h2>Design your homepage, live</h2><p>Pick an industry, an accent colour and a corner style. The preview rebuilds instantly. This is the kind of direction we settle in the Design stage.</p><div class="bld" style="margin-top:26px"><div class="ctl"><div><h3 id="l1">Industry</h3><div class="chips" id="bi" role="group" aria-labelledby="l1"></div></div><div><h3 id="l2">Accent colour</h3><div class="chips" id="bc" role="group" aria-labelledby="l2"></div></div><div><h3 id="l3">Corner style</h3><div class="chips" id="br" role="group" aria-labelledby="l3"></div></div><div><a class="btn" href="#contact">Start with this look</a></div></div><div class="stage" id="stg" aria-live="polite"></div></div></div></section>
+<section class="sec"><div class="w"><h2>From dated to distinctive</h2><p>Drag the handle, or use the arrow keys, to compare an illustrative outdated website with a redesign. Both are fictional examples, not client work.</p><div class="ba" style="margin-top:26px"><div class="pane" style="display:grid;place-items:center;padding:20px;background:#0f1e33"><div style="width:min(520px,100%)">${mock(C.projects[2])}</div></div><div class="pane old" style="background:#e8e8d0;color:#000;font:14px/1.3 'Times New Roman',serif;padding:56px 16px 16px;overflow:hidden"><div style="background:#c00;color:#ff0;padding:4px;text-align:center"><b>WELCOME TO OUR WEBSITE!!!</b></div><p style="color:#00c;text-decoration:underline;margin:8px 0;max-width:none">Home | About Us | Products | Contact | Links</p><p style="color:#000;max-width:none;font-size:13px">We are a family business since many years. We sell good quality things at good price. Please call us for more details. Click here for the old catalogue.</p><div style="display:flex;gap:6px;margin:10px 0"><div style="width:90px;height:60px;background:#999"></div><div style="width:90px;height:60px;background:#b99"></div><div style="width:90px;height:60px;background:#9b9"></div></div><small>Best viewed in Internet Explorer. Visitors: 000123</small></div><span class="tg" style="left:12px">Before</span><span class="tg" style="right:12px">After</span><input type="range" min="0" max="100" value="50" aria-label="Compare the before and after designs"><div class="hdl"></div></div></div></section>
 <section class="sec"><div class="w"><h2>Services built around your goals</h2><p>From a first business website to a full online store.</p><div class="grid" style="margin-top:28px">${C.services.map(svcCard).join("")}</div></div></section>
 <section class="sec"><div class="w"><h2>Featured concept projects</h2><p>Original concepts for fictional brands, showing how we approach design. They are not client work.</p><div class="grid" style="margin-top:28px">${C.projects.map(projCard).join("")}</div></div></section>
 <section class="sec"><div class="w"><h2>Not Just Beautiful. Built With Purpose.</h2><div class="grid" style="margin-top:26px">${[["Custom design","A look shaped around your brand, not a stock template."],["Responsive development","Layouts that work on phones, tablets and desktops."],["Performance-conscious build","Lean code and sensible image handling."],["Search-friendly foundations","Clean structure, titles and metadata. No ranking promises."],["Clear communication","You know what is happening at each stage."],["Post-launch support","Help after go-live, with optional maintenance."]].map(([t,d])=>`<div class="card"><h3>${t}</h3><p style="margin:0">${d}</p></div>`).join("")}</div></div></section>
 <section class="sec"><div class="w"><h2>How a project runs</h2><div class="steps">${[["Discover","Understand your business and requirements."],["Design","Set the visual direction and user experience."],["Build","Develop and test the website."],["Launch","Deploy, hand over and support the finished site."]].map(([t,d],i)=>`<div class="step"><b>${i+1}</b><h3>${t}</h3><p>${d}</p></div>`).join("")}</div></div></section>
 <section class="sec"><div class="w"><h2>Indicative pricing</h2><p>Starting prices in Indian rupees.</p><div class="grid" style="margin:28px 0 20px">${C.plans.map(planCard).join("")}</div>${pricingNote}</div></section>
+<section class="sec"><div class="w"><h2>Find the right package</h2><p>Answer a few quick questions to see which package fits. This is a guide, not a quote.</p><div class="est" style="margin-top:26px"><div class="ctl"><div><label for="pg">Pages needed: <b id="pgv">5</b></label><input id="pg" type="range" min="1" max="15" value="5"></div><label class="chk"><input type="checkbox" id="x-store">Sell products online</label><label class="chk"><input type="checkbox" id="x-lead">Lead forms and analytics</label><label class="chk"><input type="checkbox" id="x-more">Bookings or advanced integrations</label></div><div class="card" id="rec" aria-live="polite"></div></div></div></section>
 <section class="sec"><div class="w"><h2>Client feedback</h2><p>Our portfolio is still being developed, so there are no testimonials yet. Genuine feedback will appear here as projects are delivered.</p></div></section>
 <section class="sec"><div class="w"><h2>Frequently asked questions</h2>${faqs(C.faq)}</div></section>${fin}`,
 services:()=>`<section class="sec" style="border:0"><div class="w"><h1 style="font-size:clamp(2.2rem,6vw,4rem)">Website design and development services</h1><p>Professional website development for businesses, startups, creators and online sellers.</p>${C.services.map(s=>`<article class="card" id="${s.id}" style="margin-top:20px"><div style="display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"><div>${ic(s.i)}<h2 style="font-size:1.8rem">${s.t}</h2><p>${s.d}</p><p class="price" style="font-size:1.4rem">${s.from==="On request"?"Quoted per project":"From "+cur+s.from}</p><a class="btn" href="#contact-${s.id}">Request a quote</a></div><div><h3>Who it\u2019s for</h3><p>${s.who}</p><h3>The problem it solves</h3><p>${s.prob}</p></div><div><h3>What\u2019s included</h3><ul class="pl">${s.inc.map(x=>`<li>${x}</li>`).join("")}</ul><h3>Delivery</h3><p style="margin:0">Discover, design, build, launch.</p></div></div></article>`).join("")}</div></section>${fin}`,
@@ -177,6 +199,8 @@ document.title=({home:nm+": Website Design and Development",services:"Website De
 $("#lk").querySelectorAll("a").forEach(a=>a.getAttribute("href")==="#"+v?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
 $("#lk").classList.remove("o");$("#mb").setAttribute("aria-expanded","false");
 if(v==="contact")wireForm();
+if(v==="home")wireHome();
+fx();
 if(h.indexOf("work-")===0){const p=C.projects.find(x=>x.id===arg);if(p)openPv(p)}else if(!location.hash.match(/^#(services|home)$/)||true){window.scrollTo(0,0)}
 }
 function openPv(p){const d=$("#dlg");let mob=0;
@@ -185,7 +209,24 @@ d.querySelector("#cl").onclick=()=>d.close();d.querySelectorAll("[data-m]").forE
 d.querySelector(".btn:last-child").onclick=()=>d.close()};
 draw();d.onclose=()=>{if(location.hash.indexOf("#work-")===0)history.replaceState(null,"","#work")};d.showModal()}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pv]");if(b)openPv(C.projects.find(p=>p.id===b.dataset.pv))});
+// ===== Home interactions =====
+function wireHome(){
+const T=C.projects.concat([{id:"shop",n:"Loom & Lane",ind:"Online shop",b:"#101418",f:"#eef2f4",a:"#4fd1c5",r:"10px",ff:"Manrope,sans-serif",h:"Everyday goods, made to last.",s:"Small-batch homeware for real homes.",bt:"Shop the range"}]);
+const cols=["#7c5cff","#3d8bff","#ff5a3c","#2fbf71","#e6b422"];let S={t:0,a:null,r:null};
+const draw=()=>{const t=T[S.t],p=Object.assign({},t,{a:S.a||t.a,r:S.r||t.r});
+$("#bi").innerHTML=T.map((x,i)=>`<button data-i="${i}" aria-pressed="${i===S.t}">${x.ind}</button>`).join("");
+$("#bc").innerHTML=cols.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="Accent colour ${c}" aria-pressed="${(S.a||t.a)===c}"></button>`).join("");
+$("#br").innerHTML=[["Sharp","2px"],["Soft","10px"],["Round","99px"]].map(([l,v])=>`<button data-r="${v}" aria-pressed="${(S.r||t.r)===v}">${l}</button>`).join("");
+$("#stg").innerHTML=mock(p)+mock(p,1)};
+$(".bld").onclick=e=>{const b=e.target.closest("button");if(!b)return;const k=Object.keys(b.dataset)[0],v=b.dataset[k];if(k==="i")S.t=+v;if(k==="c")S.a=v;if(k==="r")S.r=v;draw();const n=$(".bld [data-"+k+'="'+v+'"]');if(n)n.focus()};draw();
+const ep=()=>{const n=+$("#pg").value,s=$("#x-store").checked,l=$("#x-lead").checked,m=$("#x-more").checked;$("#pgv").textContent=n;const id=s?"ecommerce":(n>10||m)?"custom":(n>5||l)?"business":"starter";const p=C.plans.find(x=>x.id===id);
+$("#rec").innerHTML=p?`<span class="tag">Suggested starting point</span><h3>${p.n}</h3><div class="price"><small>From </small>${cur}${p.p}<small> onwards</small></div><ul>${p.f.slice(0,4).map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn" href="#contact-${p.id}">Enquire about ${p.n}</a>`:`<span class="tag">Custom scope</span><h3>Let\u2019s scope it together</h3><p>A project this size sits beyond the standard packages. Tell us what you need and we\u2019ll quote it.</p><a class="btn" href="#contact">Request a quote</a>`};
+["pg","x-store","x-lead","x-more"].forEach(i=>$("#"+i).addEventListener("input",ep));ep();
+const st=$(".stack");if(st&&!matchMedia("(prefers-reduced-motion:reduce)").matches){const a=st.firstElementChild,b=st.lastElementChild;st.onmousemove=e=>{const r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;a.style.transform=`rotateY(${x*10}deg) rotateX(${-y*8}deg)`;b.style.transform=`translate(${x*-16}px,${y*-10}px) rotate(3deg)`};st.onmouseleave=()=>{a.style.transform="";b.style.transform=""}}}
+document.addEventListener("mousemove",e=>{const c=e.target.closest&&e.target.closest(".card");if(c){const r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")}});
+addEventListener("scroll",()=>{const h=document.documentElement;$("#sp").style.width=(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100)+"%"},{passive:true});
 // ===== Form =====
+
 function wireForm(){const f=$("#f"),res=$("#res");
 const chk=()=>{let ok=1;[["name","Enter your full name."],["email","Enter a valid email address."],["msg","Describe your project in a sentence or two."]].forEach(([id,m])=>{const el=$("#"+id),er=$("#e-"+id);let bad=!el.value.trim()||(id==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));el.setAttribute("aria-invalid",bad);er.textContent=bad?m:"";if(bad&&ok){el.focus();ok=0}});return ok};
 f.addEventListener("submit",async e=>{e.preventDefault();res.textContent="";if(!chk())return;
@@ -194,11 +235,27 @@ const say=(t,x)=>{res.className="note";res.textContent=t;if(x)res.appendChild(x)
 if(C.formEndpoint){try{const r=await fetch(C.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});if(!r.ok)throw 0;f.reset();say("Thank you. Your enquiry was sent and we\u2019ll reply by your preferred contact method.")}catch{say("We couldn\u2019t send your enquiry. Please try again in a moment"+(C.email?" or email "+C.email+".":"."))}return}
 if(C.email){const a=document.createElement("a");a.className="btn";a.style.marginTop="12px";a.style.display="inline-flex";a.textContent="Open email with your enquiry";a.href="mailto:"+C.email+"?subject="+encodeURIComponent("Project enquiry from "+data.name)+"&body="+encodeURIComponent(Object.entries(data).map(([k,v])=>k+": "+v).join("\n"));say("Your enquiry has not been sent yet. Open your email app to send it.",document.createElement("br"));res.appendChild(a);return}
 say("Your enquiry has not been sent. This form has no delivery service connected yet. The site owner must add a form endpoint or email address in the config.")});}
+// ===== Premium effects =====
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function fx(){const ba=$(".ba input");if(ba)ba.oninput=()=>ba.parentNode.style.setProperty("--p",ba.value+"%");
+if(RM||!window.IntersectionObserver)return;const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.05});document.querySelectorAll(".sec>.w").forEach(el=>{el.classList.add("rv");io.observe(el)})}
+addEventListener("scroll",()=>{const s=$(".steps");if(!s)return;const r=s.getBoundingClientRect(),f=Math.max(0,Math.min(1,(innerHeight*.78-r.top)/r.height));s.style.setProperty("--f",f);s.querySelectorAll(".step").forEach((x,i)=>x.classList.toggle("on",f>=i/4&&f>0))},{passive:true});
+document.addEventListener("mousemove",e=>{if(RM||!e.target.closest)return;const h=e.target.closest(".hero");if(h){const r=h.getBoundingClientRect();h.style.setProperty("--ox",(e.clientX-r.left)+"px");h.style.setProperty("--oy",(e.clientY-r.top)+"px")}const b=e.target.closest(".btn");if(b){const r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.18)+"px "+((e.clientY-r.top-r.height/2)*.28)+"px"}});
+document.addEventListener("mouseout",e=>{const b=e.target.closest&&e.target.closest(".btn");if(b)b.style.translate=""});
+(function(){const d=$("#cmd"),q=$("#cq");const items=C.nav.map(([k,l])=>["Go to "+l,"#"+k]).concat(C.projects.map(p=>["Preview "+p.n+" (concept)","#work-"+p.id]),C.plans.map(p=>["Enquire about the "+p.n+" package","#contact-"+p.id]),[["Start a project","#contact"]]);let i=0,list=[];
+const draw=()=>{const t=q.value.toLowerCase();list=items.filter(x=>x[0].toLowerCase().includes(t));i=Math.min(i,Math.max(list.length-1,0));$("#cl2").innerHTML=list.map((x,j)=>`<li role="option" aria-selected="${j===i}" data-j="${j}">${x[0]}</li>`).join("")||"<li>No matches</li>"};
+const go=j=>{if(list[j]){d.close();location.hash=list[j][1]}};
+const open=()=>{q.value="";i=0;draw();d.showModal();q.focus()};
+q.addEventListener("input",()=>{i=0;draw()});
+q.addEventListener("keydown",e=>{if(e.key==="ArrowDown"){e.preventDefault();i=Math.min(i+1,list.length-1);draw()}else if(e.key==="ArrowUp"){e.preventDefault();i=Math.max(i-1,0);draw()}else if(e.key==="Enter"){e.preventDefault();go(i)}});
+$("#cl2").addEventListener("click",e=>{const l=e.target.closest("li[data-j]");if(l)go(+l.dataset.j)});
+document.addEventListener("click",e=>{if(e.target.closest("#kb"))open()});
+document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();d.open?d.close():open()}})})();
 // ===== Chrome =====
 $("#lk").innerHTML=C.nav.map(([k,l])=>`<a href="#${k}">${l}</a>`).join("")+cta();
 $("#mb").onclick=()=>{const o=$("#lk").classList.toggle("o");$("#mb").setAttribute("aria-expanded",o)};
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#lk").classList.contains("o")){$("#lk").classList.remove("o");$("#mb").setAttribute("aria-expanded","false");$("#mb").focus()}});
-$("#bn").textContent=br;
+$("#bn").textContent=br;$("#lk").insertAdjacentHTML("afterbegin",'<button class="btn g" id="kb" type="button" style="padding:8px 14px">Quick search</button>');
 const soc=Object.entries(C.social).filter(([,u])=>u);
 $("#ft").innerHTML=`<div><a class="logo" href="#home" style="padding:0"><i></i>${br}</a><p>${C.tagline}</p></div><div><b>Services</b>${C.services.slice(0,4).map(s=>`<a href="#services">${s.t}</a>`).join("")}</div><div><b>Company</b>${C.nav.map(([k,l])=>`<a href="#${k}">${l}</a>`).join("")}</div><div><b>Contact</b>${C.email?`<a href="mailto:${C.email}">${C.email}</a>`:"<span>Email: to be added</span>"}${C.phone?`<a href="tel:${C.phone}">${C.phone}</a>`:""}${C.whatsapp?`<a href="https://wa.me/${C.whatsapp}">WhatsApp</a>`:""}${soc.map(([n,u])=>`<a href="${u}" rel="noopener">${n}</a>`).join("")}<a href="#about">Privacy policy</a><a href="#about">Terms of service</a></div>`;
 $("#cp").textContent="\u00A9 "+new Date().getFullYear()+" "+nm+". Privacy and terms pages are placeholders until your legal text is added.";
